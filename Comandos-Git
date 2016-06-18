@@ -1,0 +1,134 @@
+GIT – principais comandos.
+
+Inicializar git no diretório:
+git init
+
+Colocar tag na versão:
+git tag
+
+Ver diferenças entre versões:
+git diff v1.0 v2.0 (“Q” para sair)
+
+Mudar de versão:
+git checkout v1.0
+
+Ver quem modificou o arquivo:
+git blame arquivo.extensão
+
+Arquivos monitorados:
+git ls-files
+
+Verificar status do repositório:
+git status
+
+Adicionar arquivo para futuro commit:
+git add arquivo.extensão
+
+Adicionar todos os arquivos do diretório para futuro commit:
+git add *
+
+Setar usuário que faz a alteração:
+git config user.name “Aislan Nadrowski”
+
+Setar email do usuário que faz a alteração:
+git config user.email “aislan@tecmatic.com.br” 
+
+Fazer commit:
+git commit –m “Mensagem informativa sobre o commit”
+
+Adicionar servidor remote do GitHub:
+git remote add [alias_do_repositório] [uri_do_repositório]
+
+Enviar arquivos para o GitHub:
+git push [alias_do_repositório] [branch]
+
+Fazer download do repositório do GitHub:
+git pull [alias_do_repositório] [branch]
+
+Visualizar log do repositório:
+git log
+
+Verificar o que mudou no repositório:
+git whatchanged
+
+Criar uma nova branch:
+git branch [nome]
+
+
+Visualizar quais branches existem no repositório:
+git branch
+
+Mudar para outra branch do repositório:
+git checkout [branch]
+
+Enviar uma branch nova para o GitHub (usa-se o mesmo comando do master):
+git push [alias_do_repositório] [branch]
+
+Para atualizar a branch local, com base na branch remota (usa-se o mesmo comando do master):
+git pull [alias_do_repositório] [branch]
+
+Visualizar as branches existentes no servidor remoto:
+git branch –r
+
+Como criar uma branch local, copiando o conteúdo de uma branch do servidor:
+git branch –t [alias_branch_local] [alias_repositorio_remoto]/[nome_branch_no_servidor]
+Exemplo: git branch –t design origin/design
+
+Para fazer o rebase dos commit de duas branches, basta ir na branch secundária e digitar o seguinte comando (para juntar todos os commits e tornar uma versão só):
+git rebase [branch]
+Exemplo: git rebase master (quando se está por exemplo na branch desenvolvimento)
+
+Para enviar apenas os commits ao master remoto, usa-se o seguinte comando:
+git merge
+
+Durante o rebase, se ocorrer um problema é possível utilizar os seguintes comandos:
+git rebase --abort
+git rebase --skip
+git rebase --continue
+
+Para descartas as alterações do Working Directory (volta os arquivos ao estado atual do HEAD):
+git checkout [arquivo]
+Exemplo: git checkout LerArquivo.java
+
+Para copiar um arquivo de uma branch para outra, basta ir para a branch que que deseja-se que o arquivo fique salvo e usar o seguinte comando:
+git checkout master [arquivo]
+Exemplo: git checkout master LerArquivo.java (o arquivo que está na branch master será copiado para a branch atual).
+
+Para descartar as alterações que já estão no Index, basta usar o comando:
+git reset HEAD [arquivo]
+Exemplo: git reset HEAD LerArquivo.java
+Observação: ao fazer este comando, o arquivo vai para o Working Directory e caso necessário deve-se usar o comando git checkout [arquivo] para voltar ao estado do HEAD.
+
+Para salvar o estado atual do Working Directory e Index em uma memória temporária basta usar o seguinte comando (após utilizar o comando, o Working directory e Index ficam limpos – ou seja, igual ao HEAD):
+git stash
+
+
+Após usar o comando git stash, fazer as modificações necessárias e fazer o commit. Pode-se puxar o conteúdo que está na memória temporária (reverter o comando git stash) usando o comando:
+git stash pop
+
+Para listar os estados salvos na memória temporária, pode-se usar o comando:
+git stash list
+
+Para recuperar um estado mais antigo, pode-se usar o seguinte comando:
+git stash pop stash@{1}
+
+Para voltar ao estado de um commit anterior, basta usar o seguinte comando:
+git reset [hash]
+Exemplo: git reset b6c7cc8e3fea9b255b5845e1114588206679f609
+
+Para reverter (deletar) um commit antigo, pode-se usar o seguindo comando:
+git revert [hash]
+Exemplo: git revert b6c7cc8e3fea9b255b5845e1114588206679f609
+
+Para reverter um commit e realizar alterações:
+git revert –n [hash_do_commit]
+
+
+
+
+
+
+
+
+
+
