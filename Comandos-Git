@@ -54,7 +54,6 @@ git whatchanged
 Criar uma nova branch:
 git branch [nome]
 
-
 Visualizar quais branches existem no repositório:
 git branch
 
@@ -122,6 +121,21 @@ Exemplo: git revert b6c7cc8e3fea9b255b5845e1114588206679f609
 
 Para reverter um commit e realizar alterações:
 git revert –n [hash_do_commit]
+
+Para criar uma branch e já mudar para ela automaticamente:
+git checkout -b [branch]
+Exemplo: git checkout -b desenvolvimento
+
+Para deletar uma branch:
+git branch -d [branch]
+Exemplo: git branch -d desenvolvimento
+
+Para criar uma branch remota com ligação a branch local:
+git push -u [branch]
+Exemplo: git push -u desenvolvimento
+
+Para listar todas as branches locais e remotas:
+git branch -a
 
 
 
