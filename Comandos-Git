@@ -85,7 +85,7 @@ git rebase --abort
 git rebase --skip
 git rebase --continue
 
-Para descartas as alterações do Working Directory (volta os arquivos ao estado atual do HEAD):
+Para descartar as alterações do Working Directory (volta os arquivos ao estado atual do HEAD):
 git checkout [arquivo]
 Exemplo: git checkout LerArquivo.java
 
@@ -130,15 +130,25 @@ Para deletar uma branch:
 git branch -d [branch]
 Exemplo: git branch -d desenvolvimento
 
+Para deletar uma branch remota:
+git push [repositorio_remoto] :[branch]
+Exemplo: git push origin :desenvolvimento 
+
 Para criar uma branch remota com ligação a branch local:
 git push -u [branch]
 Exemplo: git push -u desenvolvimento
 
+Para criar uma branch local com o mesmo nome e conteúdo da branch remota e 
+ainda trakear as duas (ligar as duas):
+git checkout -t [repositorio_remoto]/[branch]
+Exemplo: git checkout -t origin/desenvolvimento
+
 Para listar todas as branches locais e remotas:
 git branch -a
 
-
-
+Para verificar as atualiações realizadas no repositório remoto:
+git fetch [repositorio_remoto]
+git fetch origin
 
 
 
