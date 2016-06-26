@@ -150,6 +150,38 @@ Para verificar as atualiações realizadas no repositório remoto:
 git fetch [repositorio_remoto]
 git fetch origin
 
+Para puxar determinado commit de uma branch para a branch atual usa-se o comando:
+git cherry-pick [hash_do_commit]
+Exemplo: git cherry-pick 29f0bb8d8b4be8ecd687b48rca301b71b95eab41
+
+Para não gerar um novo commit ao executar o comando git cherry-pick, pode-se usar o comando:
+git cherry-pick -n [hash_do_commit]
+Exemplo: git cherry-pick -n 29f0bb8d8b4be8ecd687b48rca301b71b95eab41
+
+Para passar um range de commits ao comando git cherry-pick, usa-se o comando:
+git cherry-pick [hash_do_commmit_inicial]..[hash_do_commit_final]
+Exemplo: git cherry-pick [1122]..[3344]
+
+Para descartar as alterações do último commit usa-se o comando:
+git reset --hard HEAD~1
+
+Para recuperar o último estado salvo com o comando git stash, mas sem removê-lo da lista de stashs:
+git stash apply
+
+Para deletar o último estado salvo com o comando git stash, usa-se:
+git stash drop
+
+Para deletar todos os estados salvos no stash, usa-se:
+git stash clear
+
+
+
+
+
+
+
+
+
 
 
 
