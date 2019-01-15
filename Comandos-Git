@@ -31,7 +31,7 @@ Setar usuário que faz a alteração:
 git config user.name “Aislan Nadrowski”
 
 Setar email do usuário que faz a alteração:
-git config user.email “aislan@tecmatic.com.br” 
+git config user.email “aislan.nadrowski@gmail.com” 
 
 Fazer commit:
 git commit –m “Mensagem informativa sobre o commit”
